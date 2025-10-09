@@ -84,7 +84,18 @@ div {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+
+}
+
+.Education{
+    border-bottom: 5px solid var(--primary);
+    padding-bottom: 5px;
+    margin-bottom: 18px;
+}
+
+p {
+    line-height: 2;
 }
 
 .header {
@@ -95,6 +106,10 @@ div {
     width: 100%;
     margin-bottom: 10px;
     border-bottom: 10px solid var(--primary);
+
+    div {
+        margin-bottom: 0;
+    }
 }
 
 /* Social Media Icons */
@@ -106,7 +121,7 @@ div {
     /* align the column to the right edge of the header */
     justify-content: center;
     /* vertically center inside the header row */
-    gap: 8px;
+    gap: 0px;
     /* spacing between icons */
 }
 
@@ -130,15 +145,64 @@ div {
 /* End Social Media */
 
 div.introduction {
-    margin: 10px 0;
+    margin: 7px 0 18px;
     background-color: var(--background);
 }
 
+.school {
+    margin: 0 0 0.5rem 0;
+}
 
+.school h5, .school h6 {
+    margin: 0.5rem 0 0 0;
+}
+
+h5 {
+    color: var(--accent);
+}
+
+
+h4,
 p {
-    line-height: 2;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
-div.education h2 {
-    margin: 0px 0;
+
+.Education .schools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem 2rem;
+    /* row-gap col-gap */
+    align-items: start;
+    width: 100%;
+    margin-top: 0.5rem;
 }
+
+.Education .school {
+    /* keep each school's content stacked */
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.25rem 0;
+}
+
+.school h5 {
+    margin: 0;
+}
+
+.school-meta {
+    margin: 0;
+    color: var(--secondary);
+    font-weight: 400;
+    font-size: 0.91rem;
+}
+
+/* responsive: single column on small screens */
+@media (max-width: 640px) {
+    .Education .schools {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ...existing code... */
