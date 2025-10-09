@@ -1,41 +1,69 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Special%20Gothic:700|Shippori%20Antique%20B1:400');
+@import url("https://fonts.googleapis.com/css?family=Special%20Gothic:700|Shippori%20Antique%20B1:400");
 
 body {
-  font-family: 'Shippori Antique B1';
-  font-weight: 400;
-color: var(--text);
+    font-family: "Shippori Antique B1";
+    font-weight: 400;
+    color: var(--text);
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Special Gothic';
-  font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Special Gothic";
+    font-weight: 700;
 }
 
-html {font-size: 100%;} /* 16px */
+html {
+    font-size: 100%;
+}
 
-h1 {font-size: 4.210rem; /* 67.36px */}
+/* 16px */
 
-h2 {font-size: 3.158rem; /* 50.56px */}
+h1 {
+    font-size: 4.21rem;
+    /* 67.36px */
+}
 
-h3 {font-size: 2.369rem; /* 37.92px */}
+h2 {
+    font-size: 3.158rem;
+    /* 50.56px */
+}
 
-h4 {font-size: 1.777rem; /* 28.48px */}
+h3 {
+    font-size: 2.369rem;
+    /* 37.92px */
+}
 
-h5 {font-size: 1.333rem; /* 21.28px */}
+h4 {
+    font-size: 1.777rem;
+    /* 28.48px */
+}
 
-small {font-size: 0.750rem; /* 12px */}
+h5 {
+    font-size: 1.333rem;
+    /* 21.28px */
+}
+
+small {
+    font-size: 0.75rem;
+    /* 12px */
+}
+
 /* End Colors */
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     margin: 10px;
 
     background-color: var(--background);
 
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
 
     /* Colors */
     --text: #f6f8dc;
@@ -43,43 +71,67 @@ body {
     --primary: #c7c7b5;
     --secondary: #466548;
     --accent: #58acc5;
-
-
 }
 
 h1 {
-    text-align: left; 
+    /* display: flex;
+    justify-content: left; */
+    margin: 0 0 0 0;
     line-height: 0.9;
 }
 
-p {
-    line-height: 2;  
+div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 10px solid var(--accent);
 }
 
 /* Social Media Icons */
 .social-media {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    line-height: 0.1;
+    flex-direction: column;   /* make icons a column */
+    align-items: flex-end;    /* align the column to the right edge of the header */
+    justify-content: center;  /* vertically center inside the header row */
+    gap: 8px;                 /* spacing between icons */
 }
 
 .social-media a {
     text-decoration: none;
     color: var(--primary);
-    margin: 0 10px;
+    margin: 6px 0;            /* vertical spacing between stacked icons */
     font-size: 1.75em;
-
-    
 }
 
 .social-media a i {
-    margin: 0 5px 0 0;
     transition: all 0.3s;
 }
 
 .social-media a:hover i {
     transform: translateY(-4.5%);
-    color: var(--secondary);
+    color: var(--accent);
+}
+/* End Social Media */
+
+div.introduction {
+    margin: 10px 0;
 }
 
+
+p {
+    line-height: 2;
+}
+
+div.education h2 {
+    margin: 0px 0;
+}
