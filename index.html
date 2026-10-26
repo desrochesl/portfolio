@@ -1,53 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Luna DesRoches</title>
-  <script src="https://kit.fontawesome.com/dbd5498a57.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="index.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Liv DesRoches</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f7f3;
+  --surface: #e4ece2;
+  --ink: #1f2d24;
+  --muted: #5d6e62;
+  --accent: #3a7d5c;
+  --rule: #cfdcd1;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141b17; --surface: #1d2922; --ink: #e4ede6; --muted: #9bb0a0;
+    --accent: #7fbf9a; --rule: #2b3a31; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141b17; --surface: #1d2922; --ink: #e4ede6; --muted: #9bb0a0;
+  --accent: #7fbf9a; --rule: #2b3a31; color-scheme: dark;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1.125rem; line-height: 1.65;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Header */
+header { padding: 1.75rem 0; }
+header .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.wordmark { font-family: var(--display); font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.125rem; }
+nav { display: flex; gap: 1.25rem; font-family: var(--display); font-weight: 500; font-size: 1rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding: 3.5rem 0 4rem; }
+.hero h1 {
+  font-family: var(--display); font-weight: 700; margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 8.5vw, 4.75rem); line-height: 1.02; letter-spacing: -0.03em;
+}
+.hero p { font-size: 1.3125rem; max-width: 34rem; margin: 0 0 2rem; color: var(--muted); }
+.hero p strong { color: var(--ink); font-weight: 600; }
+.btn {
+  display: inline-block; font-family: var(--display); font-weight: 700; font-size: 1rem;
+  background: var(--accent); color: var(--bg); padding: 0.8rem 1.4rem; border-radius: 999px; text-decoration: none;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* Sections */
+section { padding: 3rem 0; border-top: 1px solid var(--rule); }
+h2 { font-family: var(--display); font-weight: 700; font-size: 1.75rem; letter-spacing: -0.015em; margin: 0 0 1.25rem; }
+.about { display: grid; grid-template-columns: 9rem 1fr; gap: 2rem; align-items: start; }
+.photo {
+  width: 9rem; height: 9rem; border-radius: 50%; background: var(--surface);
+  display: grid; place-items: center; font-family: var(--display); font-weight: 700;
+  font-size: 2.75rem; color: var(--accent);
+}
+.about p { margin: 0 0 1rem; }
+@media (max-width: 36rem) { .about { grid-template-columns: 1fr; } .photo { width: 6.5rem; height: 6.5rem; font-size: 2rem; } }
+
+.btn.secondary { margin-left: 0.75rem; }
+.btn.secondary { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.btn.secondary:hover { filter: none; background: var(--surface); }
+.skill-group + .skill-group { margin-top: 1.75rem; }
+.skill-group h3 { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--muted); margin: 0 0 0.6rem; }
+
+/* Lists */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.list li:first-child { padding-top: 0; }
+.list li:last-child { border-bottom: 0; }
+.list h3 { font-family: var(--display); font-size: 1.1875rem; margin: 0; }
+.list p { grid-column: 1; margin: 0; color: var(--muted); font-size: 1rem; }
+.list .year { grid-row: 1; grid-column: 2; color: var(--muted); font-family: var(--display); font-size: 0.9375rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.tags li { background: var(--surface); padding: 0.3rem 0.75rem; border-radius: 999px; font-family: var(--display); font-size: 0.9375rem; }
+
+/* Contact + footer */
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--display); font-weight: 500; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.9375rem; border-top: 1px solid var(--rule); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 { animation: rise 0.7s ease-out both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+}
+</style>
 </head>
-
 <body>
-  <div class="header">
-    <div class="name">
-      <h1>Luna<span style="color: var(--accent);"> DesRoches</span> </h1>
-    </div>
-    <div class="social-media">
-      <a href="/github"><i class="fab fa-github"></i></a>
-      <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
-      <a href="/instagram"><i class="fab fa-instagram"></i></a>
-    </div>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#top">Liv DesRoches</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-  <div class="introduction">
-    <p>
-      Hello, my name is Luna. I am an undergraduate student at Wentworth Institute of Technology.
-    </p>
-  </div>
+</header>
 
+<main id="top">
+  <div class="wrap">
 
-  <div class="Education">
-    <h4>Education:</h4>
+    <div class="hero">
+      <h1>Hi, I’m Liv. I build data and AI tools.</h1>
+      <p>I’m a Data Science student at <strong>Wentworth Institute of Technology</strong> in Boston. I’m most interested in data science and machine learning work.</p>
+      <a class="btn" href="#contact">Find me online</a>
+      <a class="btn secondary" href="Liv-DesRoches-Resume.pdf" download>Download resume</a>
+    </div>
 
-    <div class="schools">
-      <div class="school">
-        <h5>Wentworth Institute of Technology</h5>
-        <h6 class="school-meta">Boston, MA | 2024 - Present</h6>
-        <p>Bachelor of Science in Computer Science</p>
-        <ul>
-          <li>Relevant Coursework: Data Structures and Algorithms, Database Management Systems</li>
-          <li>GPA: 3.7/4.0</li>
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <div class="photo" aria-hidden="true">LD</div>
+        <div>
+          <p>I’m a senior studying Data Science with a minor in Applied Mathematics. I graduate in August 2027 with a 3.8 GPA, and I’m a Lee Scholar and Dean’s List student.</p>
+          <p>Outside of class, I’ve trained in martial arts for over 15 years and instruct group lessons at a karate school.</p>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="list">
+        <li>
+          <h3>AI Research Co-op, Wentworth Institute of Technology</h3>
+          <span class="year">May–Aug 2026</span>
+          <p>Built web scrapers and PDF extractors that collected and standardized environmental records. Parsed 300,000+ EPA Superfund site records and scaled Python and Slurm jobs over 1.8 TB of unstructured data.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="list">
+        <li>
+          <h3>Wentworth Institute of Technology, Boston, MA</h3>
+          <span class="year">Sep 2024–Aug 2027</span>
+          <p>B.S. Data Science, minor in Applied Mathematics. Relevant coursework: Algorithms, Data Structures, Probability and Statistics.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul class="tags">
+          <li>Python</li><li>Java</li><li>Rust</li><li>C</li><li>F#</li><li>SQL (MySQL)</li><li>R</li><li>HTML/CSS</li>
         </ul>
       </div>
-
-      <div class="school">
-        <h5>Spark Academy of Advanced Technology</h5>
-        <h6 class="school-meta">Manchester, NH | 2020 - 2024</h6>
-        <p>Enrolled in college level courses at Manchester Community College during high school</p>
+      <div class="skill-group">
+        <h3>Libraries and Frameworks</h3>
+        <ul class="tags">
+          <li>pandas</li><li>NumPy</li><li>Matplotlib</li><li>PyTorch</li><li>scikit-learn</li><li>Transformers</li><li>LangChain</li><li>LlamaIndex</li><li>FAISS</li><li>Docling</li><li>Playwright</li>
+        </ul>
       </div>
-    </div>
-  </div>
-</body>
+      <div class="skill-group">
+        <h3>Developer Tools</h3>
+        <ul class="tags">
+          <li>Git</li><li>Jupyter Notebook</li><li>VS Code</li><li>PyCharm</li><li>IntelliJ</li><li>Eclipse</li><li>ArcGIS</li>
+        </ul>
+      </div>
+    </section>
 
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p>Find me here:</p>
+      <ul class="links">
+        <li><a href="https://linkedin.com/in/desrochesl">LinkedIn</a></li>
+        <li><a href="https://github.com/desrochesl">GitHub</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Liv DesRoches</div>
+</footer>
+
+</body>
 </html>
